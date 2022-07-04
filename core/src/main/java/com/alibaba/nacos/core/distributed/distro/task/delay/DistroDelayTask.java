@@ -63,6 +63,7 @@ public class DistroDelayTask extends AbstractDelayTask {
             return;
         }
         DistroDelayTask oldTask = (DistroDelayTask) task;
+        // TODO: 2022/7/4  执行的操作如果比以前更旧，那么以最新时间的为准，这样怎么保证每个事件都被执行（处分每次都是全量，而不是增量）
         if (!action.equals(oldTask.getAction()) && createTime < oldTask.getCreateTime()) {
             action = oldTask.getAction();
             createTime = oldTask.getCreateTime();

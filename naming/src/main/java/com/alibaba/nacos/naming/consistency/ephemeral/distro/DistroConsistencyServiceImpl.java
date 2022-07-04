@@ -396,6 +396,7 @@ public class DistroConsistencyServiceImpl implements EphemeralConsistencyService
             if (action == DataOperation.CHANGE) {
                 services.put(datumKey, StringUtils.EMPTY);
             }
+            // TODO: 2022/7/4 如果这里满了，那么系统是否就丢失了这个任务，后面如何修复 ？
             tasks.offer(Pair.with(datumKey, action));
         }
         

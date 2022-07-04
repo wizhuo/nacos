@@ -285,6 +285,7 @@ public class DistroClientDataProcessor extends SmartSubscriber implements Distro
                         ApplicationUtils.getBean(Serializer.class).serialize(verifyData));
                 data.setType(DataOperation.VERIFY);
                 result.add(data);
+
             }
         }
         return result;
